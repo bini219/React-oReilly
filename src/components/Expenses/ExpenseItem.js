@@ -4,6 +4,7 @@ import "./ExpenseItem.css";
 
 const ExpenseItem = (props) => {
   const expense = props.data;
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={expense.date} />

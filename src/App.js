@@ -1,31 +1,20 @@
+import { useState } from "react";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  const expenses = [
-    {
-      id: "1",
-      title: "chekes",
-      date: new Date(),
-      amount: 70.21,
-    },
-    {
-      id: "2",
-      title: "Alkol",
-      date: new Date(),
-      amount: 7.21,
-    },
-    {
-      id: "3",
-      title: "Bill",
-      date: new Date(),
-      amount: 500.21,
-    },
-  ];
+  const [expenses, setExpenses] = useState([]);
+
+  const addExpense = (addedExpense) => {
+    setExpenses((prevState) => {
+      return [...prevState, addedExpense];
+    });
+  };
 
   return (
     <div>
-      <h1>Hello Cellare</h1>
+      <NewExpense addExpenseFunction={addExpense} />
       <Expenses expenses={expenses} />
     </div>
   );
