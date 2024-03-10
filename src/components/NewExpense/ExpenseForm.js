@@ -62,7 +62,6 @@ const ExpenseForm = (props) => {
         <div className="new-expense__control">
           <label>Date</label>
           <input
-            required="true"
             type="date"
             min="2019-01-01"
             value={expense.date}
